@@ -12,8 +12,8 @@
     "esbuild": "^0.17.17"
   },
   "scripts": {
-    "build": "cross-env MODE=production node ./config/build/esbuild-config.js",
-    "build:dev": "cross-env MODE=development node ./config/build/esbuild-config.js"
+    "build": "cross-env MODE=production node ./config/build/esbuild-prod.js",
+    "start": "node ./config/build/esbuild-dev.js"
   },
   "keywords": [],
   "author": "",
