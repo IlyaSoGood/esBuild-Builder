@@ -1,6 +1,7 @@
 import ESBuild, {BuildOptions} from 'esbuild';
 import path from 'path';
 import { CleanPlugin } from './plugins/CleanPlugin';
+import { HTMLPLugin } from './plugins/HTMLPlugin';
 
 const mode = process.env.MODE || 'development';
 
@@ -20,22 +21,18 @@ const config: BuildOptions = {
     tsconfig: resolveRoot ('tsconfig.json'),
     minify: isProd,
     sourcemap: isDev,
+    metafile: true,
     loader: { 
         '.jpg': 'file' ,
         '.svg': 'file',
         '.png': 'file'
     },
-    plugins: [CleanPlugin],
-    // watch: {
-    //     onRebuild(err) {
-    //         if(err) {
-    //             console.log(err)
-    //         } else {
-    //             console.log('build...')
-    //         }
-    //     }
-    // }
-    
+    plugins: [
+        CleanPlugin, 
+        HTMLPLugin({
+            title: 'Ilya',
+        })
+    ]
 }
 
 export default config;

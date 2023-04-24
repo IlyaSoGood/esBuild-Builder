@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../src/index.css", "../src/second.css"],
-  "sourcesContent": ["* {\r\n    color: red;\r\n}", "h1 {\r\n    font-size: 80px;\r\n}\r\n\r\nbutton {\r\n    width: 100px;\r\n    height: 72px;\r\n    background: rgba(0,0,0.0.5);\r\n}"],
-  "mappings": ";AAAA;AACI;AAAA;;;ACDJ;AACI;AAAA;AAGJ;AACI;AACA;AACA;AAAA;",
-  "names": []
-}

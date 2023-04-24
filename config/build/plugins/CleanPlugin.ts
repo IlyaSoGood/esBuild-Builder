@@ -1,10 +1,10 @@
 import { Plugin } from "esbuild";
 
 //Данный модуль доступен только в NODE JS 18
-// import {rm} from 'fs/promises';
+import {rm} from 'fs/promises';
 
 //Node js 12
-import fs from 'fs';
+// import fs from 'fs';
 
 export const CleanPlugin: Plugin = {
     name: 'CleanPlugin',
@@ -16,10 +16,10 @@ export const CleanPlugin: Plugin = {
                 if(outdir) {
                     //АККУРАТНО !!!!
                     //Node js 18
-                    // await fsPromises.rm(outdir, {recursive: true})
+                    await rm(outdir, {recursive: true})
                     
                     //Node js 12
-                    await fs.promises.rmdir(outdir, {recursive: true});
+                    // await fs.promises.rmdir(outdir, {recursive: true});
                     console.log('папка очистилась')
                 }
             } catch (e) {
