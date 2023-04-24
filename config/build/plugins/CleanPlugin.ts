@@ -12,7 +12,7 @@ export const CleanPlugin: Plugin = {
         build.onStart(async () => {
             try {
                 const outdir = build.initialOptions.outdir;
-                console.log(outdir);
+                // console.log(outdir);
                 if(outdir) {
                     //АККУРАТНО !!!!
                     //Node js 18

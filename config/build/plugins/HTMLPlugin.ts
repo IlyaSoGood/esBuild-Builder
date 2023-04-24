@@ -18,11 +18,11 @@ const renderHTML = (options: HTMLPluginOptions) : string => {
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>${options.title}</title>
-                <link rel="stylesheet" href="./bundle.css">
+                ${options?.cssPath?.map(path => `<link rel="stylesheet" href="${path}"></link>`).join(' ')}
             </head>
             <body>
                 <div id="root"></div>
-                ${options?.jsPath?.map(path => `<script src="${path}"></script>`)}
+                ${options?.jsPath?.map(path => `<script src="${path}"></script>`).join(' ')}
             </body>
         </html>
     `
@@ -57,11 +57,11 @@ export const HTMLPLugin = (options: HTMLPluginOptions): Plugin => {
                 }
             })
             build.onEnd(async (result) => {
-                console.log(result.metafile);
+                // console.log(result.metafile);
                 const outputs = result.metafile?.outputs;
                 const [jsPath, cssPath] = preparePaths(Object.keys(outputs || {}));
-                console.log(jsPath);
-                console.log(cssPath);
+                // console.log(jsPath);
+                // console.log(cssPath);
                 if(outDir) {
                     await writeFile(
                         path.resolve(outDir, 'index.html'),
