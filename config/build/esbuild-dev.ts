@@ -1,8 +1,9 @@
-const ESBuild = require('esbuild');
-const path = require('path');
-const config = require('./esbuild-config.js');
+import ESBuild from 'esbuild';
+import path from 'path';
 
-const PORT = process.env.PORT || 3000;
+import config from './esbuild-config';
+
+const PORT = Number(process.env.PORT) || 3000;
 
 //ESBuild 0.14.48 version
 // ESBuild.serve({
@@ -25,5 +26,6 @@ const PORT = process.env.PORT || 3000;
     let { host, port } = await ctx.serve({
         servedir: config.outdir,
         port: PORT
-    }).then(console.log('server started on  http://localhost:' + PORT))
+    })
+    // }).then(console.log('server started on  http://localhost:' + PORT))
 })()

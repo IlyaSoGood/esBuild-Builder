@@ -8,6 +8,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/node": "^18.16.0",
     "@types/react": "^18.0.38",
     "@types/react-dom": "^18.0.11",
     "cross-env": "^7.0.3",
@@ -16,8 +17,8 @@
     "typescript": "^5.0.4"
   },
   "scripts": {
-    "build": "cross-env MODE=production node ./config/build/esbuild-prod.js",
-    "start": "node ./config/build/esbuild-dev.js"
+    "build": "cross-env MODE=production ts-node ./config/build/esbuild-prod.ts",
+    "start": "ts-node ./config/build/esbuild-dev.ts"
   },
   "keywords": [],
   "author": "",

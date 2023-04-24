@@ -24403,13 +24403,19 @@
 
   // src/App.tsx
   var import_react = __toESM(require_react());
+
+  // src/2023-04-20.jpg
+  var __default = "./2023-04-20-ZHGTBYJQ.jpg";
+
+  // src/App.tsx
   var import_jsx_runtime = __toESM(require_jsx_runtime());
   var App = () => {
-    const [state, setState] = (0, import_react.useState)(11111110);
+    const [state, setState] = (0, import_react.useState)(1111111011);
     const onBtnClick = () => {
       setState(0);
     };
     return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", { src: __default, alt: "" }),
       /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h1", { children: [
         "value = $",
         state
@@ -24487,4 +24493,4 @@ react/cjs/react-jsx-runtime.development.js:
    * LICENSE file in the root directory of this source tree.
    *)
 */
-//# sourceMappingURL=bundle.js.map
+//# sourceMappingURL=bundle.index-IPH5K7VE.js.map
