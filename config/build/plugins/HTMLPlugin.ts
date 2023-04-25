@@ -23,6 +23,15 @@ const renderHTML = (options: HTMLPluginOptions) : string => {
             <body>
                 <div id="root"></div>
                 ${options?.jsPath?.map(path => `<script src="${path}"></script>`).join(' ')}
+                <script>
+                    const evtSource = new EventSource("http://localhost:3000/subscribe");
+                    evtSource.onopen = function () {console.log("open")};
+                    evtSource.onerror = function () {console.log("error")};
+                    evtSource.onmessage = function () {
+                        console.log("message");
+                        window.location.reload();
+                    };
+                </script>
             </body>
         </html>
     `

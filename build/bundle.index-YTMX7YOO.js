@@ -24410,7 +24410,7 @@
   // src/App.tsx
   var import_jsx_runtime = __toESM(require_jsx_runtime());
   var App = () => {
-    const [state, setState] = (0, import_react.useState)(1111111011);
+    const [state, setState] = (0, import_react.useState)(2222);
     const onBtnClick = () => {
       setState(0);
     };
@@ -24493,4 +24493,4 @@ react/cjs/react-jsx-runtime.development.js:
    * LICENSE file in the root directory of this source tree.
    *)
 */
-//# sourceMappingURL=bundle.index-IPH5K7VE.js.map
+//# sourceMappingURL=bundle.index-YTMX7YOO.js.map

@@ -6,7 +6,7 @@ import { useState } from 'react';
 import Logo from './2023-04-20.jpg';
 
 const App = () => {
-    const [state, setState] = useState<number>(1111111011)
+    const [state, setState] = useState<number>(2222)
 
     const onBtnClick = () => {
         setState(0)

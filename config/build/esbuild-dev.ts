@@ -47,15 +47,16 @@ app.get('/subscribe', (req, res) => {
         'Cache-Control': 'no-cache'
     };
     res.writeHead(200, headers);
+    res.write('');
 
     emitter.on('refresh', () => {
         //ОЧЕНЬ ВАЖНО: ДАННЫЙ ЧАНК ВСЕГДА НАЧИНАЕТСЯ С "data: "
-        res.write('data: some message')
+        res.write('data: some message \n\n')
     })
 })
 
 function sendMessage() {
-    emitter.emit('refhresh')
+    emitter.emit('refresh')
 }
 
 app.listen(PORT, () => console.log('server started on  http://localhost:' + PORT));
@@ -72,9 +73,9 @@ app.listen(PORT, () => console.log('server started on  http://localhost:' + PORT
     //Запуск watch'ера
     let ctx = await ESBuild.context(config);
 
-    await ctx.watch().then(() => {
-        console.log('watched')
-    });
-    // console.log('watched')
+    await ctx.watch();
+
 })()
 //--->
+
+export default sendMessage

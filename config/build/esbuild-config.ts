@@ -2,6 +2,7 @@ import ESBuild, {BuildOptions} from 'esbuild';
 import path from 'path';
 import { CleanPlugin } from './plugins/CleanPlugin';
 import { HTMLPLugin } from './plugins/HTMLPlugin';
+import { HotReload } from './plugins/HotReload';
 
 const mode = process.env.MODE || 'development';
 
@@ -31,7 +32,8 @@ const config: BuildOptions = {
         CleanPlugin, 
         HTMLPLugin({
             title: 'Ilya',
-        })
+        }),
+        HotReload
     ]
 }
 
